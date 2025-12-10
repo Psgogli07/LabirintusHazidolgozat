@@ -1,0 +1,23 @@
+Labirintusos feladat
+
+Egy elhagyatott, kőfalakkal szabdalt labirintus mélyén találod magad. A járatok kanyargósak, néhol teljesen beszűkülnek, és különféle akadályok nehezítik az előre jutást. A célod egyszerűnek tűnik: megtalálni valamelyik kijáratot, mielőtt a labirintus örökre bezárulna mögötted.
+
+Az útvonal azonban tele lehet ismerős, mégis veszélyes akadályokkal – összeomlott falakkal, csapdaajtókkal, mély gödrökkel vagy akár zárt kapukkal, amelyeket csak bizonyos kulcsok segítségével lehet kinyitni. A labirintus térképe alább látható táblázatos formában.
+
+A kijáratok száma nem haladhatja meg a pálya szélességének 20%-át. Egy 10×10-es labirintus esetében ez legfeljebb 2 kijáratot jelent.
+
+A programot úgy kell megírnia, ahogy korábban a hasonló feladatokat. A logika legyen kiszervezve OOP alapon a grafikus felület pedig abból veszi a megjelenítendő adatokat, értékeket!
+
+Generáljon egy olyan labirintust (aminek ténylegesen labirintus kinézete, szerkezete van), ami fent leírtak alapján ad egy bejáratot és ad kijáratot(ka)t!
+
+A felhasználó több kijárat esetén tudja kiválasztani, hogy melyikre szeretne útvonalat terveztetni! (Más cellára ne tervezzen útvonalat)
+a. Mindig legyen látható, hogy melyik a kijárat felé tervezzük az utat!
+
+Lehessen letenni a labirintusba akadályokat, amik az adott cella költségét/idejét megnöveli!
+a. Legyen legalább 3 különböző akadály!
+b. Az akadályoknál lehessen beállítani a költségek nagyságát!
+
+Akadályokkal vagy anélkül lehessen lekérni minden állapotnál a legrövidebb útvonalat!
+
+Lehessen lekérni a legrövidebb út mellett 2–5 alternatív útvonalat is, amik közül a felhasználó tud választani!
+a. Minden út lekérését lehessen kirajzoltatni!

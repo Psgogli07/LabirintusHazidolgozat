@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "2025_12_04_labirintusbeadando/1.0.0": {
+        "runtime": {
+          "2025_12_04_labirintusbeadando.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "2025_12_04_labirintusbeadando/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

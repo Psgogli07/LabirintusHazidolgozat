@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2025_12_04_labirintusbeadando", "2025_12_04_labirintusbeadando\2025_12_04_labirintusbeadando.csproj", "{D3466BE7-83DC-4667-9CAF-72504EC2F91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{20E83313-2BB5-44BC-B822-0984FB4B16A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3466BE7-83DC-4667-9CAF-72504EC2F91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3466BE7-83DC-4667-9CAF-72504EC2F91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3466BE7-83DC-4667-9CAF-72504EC2F91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3466BE7-83DC-4667-9CAF-72504EC2F91D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E83313-2BB5-44BC-B822-0984FB4B16A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E83313-2BB5-44BC-B822-0984FB4B16A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E83313-2BB5-44BC-B822-0984FB4B16A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E83313-2BB5-44BC-B822-0984FB4B16A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F88A038-B092-4B7A-A232-63BC42BD80D2}
+	EndGlobalSection
+EndGlobal

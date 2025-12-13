@@ -32,6 +32,7 @@ namespace WinFormsApp1
         private List<Position> currentAnimationPath;
         private bool isPlacingObstacle;
         private CellType selectedObstacleType;
+        private bool _isUpdating = false; // Add flag to prevent recursion
 
         public Form1()
         {
@@ -282,63 +283,120 @@ namespace WinFormsApp1
 
         private void MazeService_MazeChanged(object sender, EventArgs e)
         {
-            UpdateExitComboBox();
-            UpdateUI();
-            panelMaze.Invalidate();
+            // Prevent reentrancy
+            if (_isUpdating) return;
+
+            _isUpdating = true;
+            try
+            {
+                // Temporarily remove event handlers to prevent recursion
+                cmbExitSelect.SelectedIndexChanged -= CmbExitSelect_SelectedIndexChanged;
+
+                UpdateExitComboBox();
+                UpdateUI();
+                panelMaze.Invalidate();
+            }
+            finally
+            {
+                cmbExitSelect.SelectedIndexChanged += CmbExitSelect_SelectedIndexChanged;
+                _isUpdating = false;
+            }
         }
 
         private void MazeService_PathsChanged(object sender, EventArgs e)
         {
-            UpdatePathComboBox();
-            UpdateUI();
-            panelMaze.Invalidate();
+            if (_isUpdating) return;
+
+            _isUpdating = true;
+            try
+            {
+                cmbPathSelect.SelectedIndexChanged -= CmbPathSelect_SelectedIndexChanged;
+
+                UpdatePathComboBox();
+                UpdateUI();
+                panelMaze.Invalidate();
+            }
+            finally
+            {
+                cmbPathSelect.SelectedIndexChanged += CmbPathSelect_SelectedIndexChanged;
+                _isUpdating = false;
+            }
         }
 
         private void UpdateExitComboBox()
         {
-            cmbExitSelect.Items.Clear();
-
             if (mazeService.CurrentMaze != null && mazeService.CurrentMaze.Exits != null)
             {
-                for (int i = 0; i < mazeService.CurrentMaze.Exits.Count; i++)
-                {
-                    var exit = mazeService.CurrentMaze.Exits[i];
-                    // Explicitly get X and Y properties instead of relying on ToString()
-                    cmbExitSelect.Items.Add($"Kijárat {i + 1} ({exit.X}, {exit.Y})");
-                }
+                // Temporarily disable the event
+                cmbExitSelect.SelectedIndexChanged -= CmbExitSelect_SelectedIndexChanged;
 
-                if (mazeService.CurrentMaze.Exits.Count > 0)
+                try
                 {
-                    cmbExitSelect.SelectedIndex = 0;
+                    cmbExitSelect.Items.Clear();
+
+                    for (int i = 0; i < mazeService.CurrentMaze.Exits.Count; i++)
+                    {
+                        var exit = mazeService.CurrentMaze.Exits[i];
+                        cmbExitSelect.Items.Add($"Kijárat {i + 1} ({exit.X}, {exit.Y})");
+                    }
+
+                    if (mazeService.CurrentMaze.Exits.Count > 0)
+                    {
+                        // Only set selected index if it's different
+                        if (cmbExitSelect.SelectedIndex != 0)
+                        {
+                            cmbExitSelect.SelectedIndex = 0;
+                        }
+                    }
+                }
+                finally
+                {
+                    cmbExitSelect.SelectedIndexChanged += CmbExitSelect_SelectedIndexChanged;
                 }
             }
         }
 
         private void UpdatePathComboBox()
         {
-            cmbPathSelect.Items.Clear();
-
             if (mazeService.CurrentPaths != null)
             {
-                for (int i = 0; i < mazeService.CurrentPaths.Count; i++)
-                {
-                    var path = mazeService.CurrentPaths[i];
-                    cmbPathSelect.Items.Add($"Út {i + 1} (Hossz: {path.PathLength}, Költség: {path.TotalCost})");
-                }
+                cmbPathSelect.SelectedIndexChanged -= CmbPathSelect_SelectedIndexChanged;
 
-                if (mazeService.CurrentPaths.Count > 0)
+                try
                 {
-                    cmbPathSelect.SelectedIndex = mazeService.SelectedPathIndex;
+                    cmbPathSelect.Items.Clear();
+
+                    for (int i = 0; i < mazeService.CurrentPaths.Count; i++)
+                    {
+                        var path = mazeService.CurrentPaths[i];
+                        cmbPathSelect.Items.Add($"Út {i + 1} (Hossz: {path.PathLength}, Költség: {path.TotalCost})");
+                    }
+
+                    if (mazeService.CurrentPaths.Count > 0)
+                    {
+                        // Only select if different from current
+                        int selectedIndex = Math.Max(0, Math.Min(mazeService.SelectedPathIndex, mazeService.CurrentPaths.Count - 1));
+                        if (cmbPathSelect.SelectedIndex != selectedIndex)
+                        {
+                            cmbPathSelect.SelectedIndex = selectedIndex;
+                        }
+                    }
+                }
+                finally
+                {
+                    cmbPathSelect.SelectedIndexChanged += CmbPathSelect_SelectedIndexChanged;
                 }
             }
         }
 
         private void UpdateUI()
         {
-            if (mazeService.CurrentMaze != null)
+            if (mazeService.CurrentMaze != null && mazeService.CurrentMaze.Size > 0)
             {
-                cellSize = Math.Min(panelMaze.Width / mazeService.CurrentMaze.Size,
-                                   panelMaze.Height / mazeService.CurrentMaze.Size);
+                cellSize = Math.Max(1, Math.Min(
+                    panelMaze.Width / mazeService.CurrentMaze.Size,
+                    panelMaze.Height / mazeService.CurrentMaze.Size
+                ));
 
                 btnFindShortest.Enabled = true;
                 btnFindAlternatives.Enabled = true;
@@ -474,56 +532,72 @@ namespace WinFormsApp1
 
         private void PanelMaze_Paint(object sender, PaintEventArgs e)
         {
-            if (mazeService.CurrentMaze == null) return;
-
-            var maze = mazeService.CurrentMaze;
-            var g = e.Graphics;
-
-            // Draw cells
-            for (int y = 0; y < maze.Size; y++)
+            try
             {
-                for (int x = 0; x < maze.Size; x++)
+                if (mazeService.CurrentMaze == null) return;
+
+                var maze = mazeService.CurrentMaze;
+                var g = e.Graphics;
+
+                // Calculate cell size - add validation
+                if (maze.Size <= 0) return;
+
+                cellSize = Math.Max(1, Math.Min(
+                    panelMaze.Width / maze.Size,
+                    panelMaze.Height / maze.Size
+                ));
+
+                // Draw cells
+                for (int y = 0; y < maze.Size; y++)
                 {
-                    var cellType = maze.Grid[y, x];
-                    Brush brush = GetBrushForCell(cellType);
-
-                    g.FillRectangle(brush, x * cellSize, y * cellSize, cellSize, cellSize);
-                    g.DrawRectangle(Pens.Gray, x * cellSize, y * cellSize, cellSize, cellSize);
-
-                    // Draw cell type character
-                    if (cellType != CellType.Path)
+                    for (int x = 0; x < maze.Size; x++)
                     {
-                        string text = ((char)cellType).ToString();
-                        var font = new Font("Arial", cellSize / 3);
-                        var textSize = g.MeasureString(text, font);
-                        g.DrawString(text, font, Brushes.Black,
-                            x * cellSize + (cellSize - textSize.Width) / 2,
-                            y * cellSize + (cellSize - textSize.Height) / 2);
+                        var cellType = maze.Grid[y, x];
+                        Brush brush = GetBrushForCell(cellType);
+
+                        g.FillRectangle(brush, x * cellSize, y * cellSize, cellSize, cellSize);
+                        g.DrawRectangle(Pens.Gray, x * cellSize, y * cellSize, cellSize, cellSize);
+
+                        // Draw cell type character
+                        if (cellType != CellType.Path && cellType != CellType.Wall)
+                        {
+                            string text = ((char)cellType).ToString();
+                            var font = new Font("Arial", Math.Max(6, cellSize / 3));
+                            var textSize = g.MeasureString(text, font);
+                            g.DrawString(text, font, Brushes.Black,
+                                x * cellSize + (cellSize - textSize.Width) / 2,
+                                y * cellSize + (cellSize - textSize.Height) / 2);
+                        }
+                    }
+                }
+
+                // Highlight selected exit
+                if (maze.SelectedExit != null)
+                {
+                    var pen = new Pen(Color.Yellow, 3);
+                    g.DrawRectangle(pen,
+                        maze.SelectedExit.X * cellSize,
+                        maze.SelectedExit.Y * cellSize,
+                        cellSize, cellSize);
+                }
+
+                // Draw path if animating
+                if (currentAnimationPath != null && animationStep > 0)
+                {
+                    for (int i = 0; i < Math.Min(animationStep, currentAnimationPath.Count); i++)
+                    {
+                        var pos = currentAnimationPath[i];
+                        g.FillRectangle(Brushes.Orange,
+                            pos.X * cellSize + 2,
+                            pos.Y * cellSize + 2,
+                            cellSize - 4, cellSize - 4);
                     }
                 }
             }
-
-            // Highlight selected exit
-            if (maze.SelectedExit != null)
+            catch (Exception ex)
             {
-                var pen = new Pen(Color.Yellow, 3);
-                g.DrawRectangle(pen,
-                    maze.SelectedExit.X * cellSize,
-                    maze.SelectedExit.Y * cellSize,
-                    cellSize, cellSize);
-            }
-
-            // Draw path if animating
-            if (currentAnimationPath != null && animationStep > 0)
-            {
-                for (int i = 0; i < Math.Min(animationStep, currentAnimationPath.Count); i++)
-                {
-                    var pos = currentAnimationPath[i];
-                    g.FillRectangle(Brushes.Orange,
-                        pos.X * cellSize + 2,
-                        pos.Y * cellSize + 2,
-                        cellSize - 4, cellSize - 4);
-                }
+                // Log or handle painting errors
+                System.Diagnostics.Debug.WriteLine($"Painting error: {ex.Message}");
             }
         }
 

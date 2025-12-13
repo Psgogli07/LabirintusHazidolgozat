@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\13 asztali\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj": {}
+    "D:\\13 asztali\\LabirintusHazidolgozat\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj": {}
   },
   "projects": {
-    "D:\\13 asztali\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj": {
+    "D:\\13 asztali\\LabirintusHazidolgozat\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\13 asztali\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj",
+        "projectUniqueName": "D:\\13 asztali\\LabirintusHazidolgozat\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj",
         "projectName": "2025_12_04_labirintusbeadando",
-        "projectPath": "D:\\13 asztali\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj",
+        "projectPath": "D:\\13 asztali\\LabirintusHazidolgozat\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando.csproj",
         "packagesPath": "C:\\Users\\Ákos\\.nuget\\packages\\",
-        "outputPath": "D:\\13 asztali\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\obj\\",
+        "outputPath": "D:\\13 asztali\\LabirintusHazidolgozat\\2025_12_04_labirintusbeadando\\2025_12_04_labirintusbeadando\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

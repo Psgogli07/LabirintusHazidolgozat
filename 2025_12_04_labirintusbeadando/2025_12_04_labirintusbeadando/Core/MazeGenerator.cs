@@ -1,189 +1,196 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _2025_12_04_labirintusbeadando.Core
 {
     public class MazeGenerator
     {
-        private Random rnd = new Random();
-        private bool[,] visited;
+        private readonly Random random;
+        private const int STEP_SIZE = 2;
+
+        public MazeGenerator(int? seed = null)
+        {
+            random = seed.HasValue ? new Random(seed.Value) : new Random();
+        }
 
         public Maze Generate(int size, int exitCount)
         {
+            ValidateParameters(size, exitCount);
+
             Maze maze = new Maze(size);
 
-            // Alap falak
-            for (int y = 0; y < size; y++)
-                for (int x = 0; x < size; x++)
-                    maze.SetCell(x, y, '#');
+            // Generate start position on left side
+            Position start = GenerateStartPosition(size);
+            maze.SetCell(start.X, start.Y, CellType.Start);
 
-            visited = new bool[size, size];
+            // Generate maze paths using DFS
+            GeneratePaths(maze, start.X + 1, start.Y);
 
-            // Start bal oldalon
-            int startX = 0;
-            int startY = rnd.Next(1, size - 1);
-            maze.SetCell(startX, startY, 'S');
-
-            // DFS a fal mögötti cellától
-            GenerateDFSIterative(maze, startX + 1, startY);
-
-            // Kijáratok
+            // Add exits
             AddExits(maze, exitCount);
+
+            // Select first exit by default
+            if (maze.Exits.Count > 0)
+                maze.SelectExit(maze.Exits[0]);
 
             return maze;
         }
 
-        private void GenerateDFSIterative(Maze maze, int startX, int startY)
+        private void ValidateParameters(int size, int exitCount)
         {
-            visited = new bool[maze.Size, maze.Size];
+            if (size < 5)
+                throw new ArgumentException("Size must be at least 5");
 
-            Stack<(int x, int y)> stack = new Stack<(int x, int y)>();
-            stack.Push((startX, startY));
-            maze.SetCell(startX, startY, ' ');
+            int maxExits = (int)Math.Floor(size * 0.2);
+            if (exitCount < 1)
+                throw new ArgumentException("Exit count must be at least 1");
+
+            if (exitCount > maxExits)
+                throw new ArgumentException($"Exit count cannot exceed {maxExits} for size {size}");
+        }
+
+        private Position GenerateStartPosition(int size)
+        {
+            // Generate odd Y position for proper path generation
+            int y = random.Next(1, size - 2);
+            if (y % 2 == 0) y--;
+            return new Position(0, y);
+        }
+
+        private void GeneratePaths(Maze maze, int startX, int startY)
+        {
+            if (startX % 2 == 0) startX--;
+            if (startY % 2 == 0) startY--;
+
+            bool[,] visited = new bool[maze.Size, maze.Size];
+            Stack<Position> stack = new Stack<Position>();
+
+            Position startPos = new Position(startX, startY);
+            stack.Push(startPos);
+            maze.SetCell(startX, startY, CellType.Path);
             visited[startY, startX] = true;
 
-            var directions = new List<(int dx, int dy)>
+            var directions = new List<Position>
             {
-                (2,0), (-2,0), (0,2), (0,-2)
+                new Position(STEP_SIZE, 0),
+                new Position(-STEP_SIZE, 0),
+                new Position(0, STEP_SIZE),
+                new Position(0, -STEP_SIZE)
             };
 
             while (stack.Count > 0)
             {
-                var (x, y) = stack.Pop();
+                var current = stack.Pop();
 
-                var shuffledDirs = new List<(int dx, int dy)>(directions);
-                Shuffle(shuffledDirs);
-
-                foreach (var (dx, dy) in shuffledDirs)
+                var shuffledDirs = Shuffle(directions);
+                foreach (var dir in shuffledDirs)
                 {
-                    int nx = x + dx;
-                    int ny = y + dy;
+                    int newX = current.X + dir.X;
+                    int newY = current.Y + dir.Y;
 
-                    if (!IsInside(maze, nx, ny)) continue;
-                    if (visited[ny, nx]) continue;
+                    if (!IsValidPositionForPath(maze, newX, newY) || visited[newY, newX])
+                        continue;
 
-                    maze.SetCell(x + dx / 2, y + dy / 2, ' '); // fal eltávolítása
-                    maze.SetCell(nx, ny, ' ');
+                    // Remove wall between current and new position
+                    int wallX = current.X + dir.X / 2;
+                    int wallY = current.Y + dir.Y / 2;
+                    maze.SetCell(wallX, wallY, CellType.Path);
 
-                    visited[ny, nx] = true;
-                    stack.Push((nx, ny));
+                    maze.SetCell(newX, newY, CellType.Path);
+                    visited[newY, newX] = true;
+
+                    stack.Push(new Position(newX, newY));
                 }
             }
         }
 
-        private bool IsInside(Maze maze, int x, int y)
+        private bool IsValidPositionForPath(Maze maze, int x, int y)
         {
             return x > 0 && y > 0 && x < maze.Size - 1 && y < maze.Size - 1;
         }
 
-        private void Shuffle(List<(int X, int Y)> list)
+        private List<Position> Shuffle(List<Position> list)
         {
-            for (int i = list.Count - 1; i > 0; i--)
+            var shuffled = new List<Position>(list);
+            for (int i = shuffled.Count - 1; i > 0; i--)
             {
-                int j = rnd.Next(i + 1);
-                (list[i], list[j]) = (list[j], list[i]);
+                int j = random.Next(i + 1);
+                (shuffled[i], shuffled[j]) = (shuffled[j], shuffled[i]);
             }
+            return shuffled;
         }
 
         private void AddExits(Maze maze, int exitCount)
         {
             int placed = 0;
-            while (placed < exitCount)
+            List<Position> possibleExitPositions = GetPossibleExitPositions(maze);
+            ShufflePositions(possibleExitPositions);
+
+            foreach (var exitPos in possibleExitPositions)
             {
-                int side = rnd.Next(4);
-                int pos = rnd.Next(1, maze.Size - 1);
-                int x = 0, y = 0;
+                if (placed >= exitCount) break;
 
-                switch (side)
+                if (IsAdjacentToPath(maze, exitPos))
                 {
-                    case 0: x = maze.Size - 1; y = pos; break;
-                    case 1: x = pos; y = 0; break;
-                    case 2: x = 0; y = pos; break;
-                    case 3: x = pos; y = maze.Size - 1; break;
-                }
-
-                int bx = x == 0 ? 1 : (x == maze.Size - 1 ? x - 1 : x);
-                int by = y == 0 ? 1 : (y == maze.Size - 1 ? y - 1 : y);
-
-                if (maze.Grid[by, bx] == ' ')
-                {
-                    maze.SetCell(x, y, 'E');
+                    maze.SetCell(exitPos.X, exitPos.Y, CellType.Exit);
                     placed++;
                 }
             }
+
+            if (placed < exitCount)
+                throw new InvalidOperationException("Could not place all exits");
         }
 
-        // ===== BFS: legrövidebb út a legközelebbi kijárathoz =====
-        public List<Position> FindShortestPath(Maze maze)
+        private List<Position> GetPossibleExitPositions(Maze maze)
         {
-            int size = maze.Size;
-            bool[,] visited = new bool[size, size];
-            Position[,] parent = new Position[size, size];
-            Queue<Position> queue = new Queue<Position>();
+            var positions = new List<Position>();
 
-            Position start = new Position(0, 0);
-            List<Position> exits = new List<Position>();
-
-            // Start és exit pozíciók
-            for (int y = 0; y < size; y++)
-                for (int x = 0; x < size; x++)
-                {
-                    if (maze.Grid[y, x] == 'S') start = new Position(x, y);
-                    if (maze.Grid[y, x] == 'E') exits.Add(new Position(x, y));
-                }
-
-            // Válasszuk ki a legközelebbi exitet
-            Position end = exits[0];
-            int minDist = Math.Abs(end.X - start.X) + Math.Abs(end.Y - start.Y);
-            foreach (var e in exits)
+            // Top and bottom rows (excluding corners)
+            for (int x = 1; x < maze.Size - 1; x++)
             {
-                int dist = Math.Abs(e.X - start.X) + Math.Abs(e.Y - start.Y);
-                if (dist < minDist)
-                {
-                    minDist = dist;
-                    end = e;
-                }
+                positions.Add(new Position(x, 0));
+                positions.Add(new Position(x, maze.Size - 1));
             }
 
-            queue.Enqueue(start);
-            visited[start.Y, start.X] = true;
-
-            int[] dx = { 1, -1, 0, 0 };
-            int[] dy = { 0, 0, 1, -1 };
-
-            while (queue.Count > 0)
+            // Left and right columns (excluding corners)
+            for (int y = 1; y < maze.Size - 1; y++)
             {
-                var pos = queue.Dequeue();
+                positions.Add(new Position(0, y));
+                positions.Add(new Position(maze.Size - 1, y));
+            }
 
-                if (pos.X == end.X && pos.Y == end.Y) break;
+            return positions;
+        }
 
-                for (int i = 0; i < 4; i++)
+        private void ShufflePositions(List<Position> positions)
+        {
+            for (int i = positions.Count - 1; i > 0; i--)
+            {
+                int j = random.Next(i + 1);
+                (positions[i], positions[j]) = (positions[j], positions[i]);
+            }
+        }
+
+        private bool IsAdjacentToPath(Maze maze, Position pos)
+        {
+            var adjacentPositions = new List<Position>
+            {
+                new Position(pos.X + 1, pos.Y),
+                new Position(pos.X - 1, pos.Y),
+                new Position(pos.X, pos.Y + 1),
+                new Position(pos.X, pos.Y - 1)
+            };
+
+            foreach (var adjacent in adjacentPositions)
+            {
+                if (maze.IsValidPosition(adjacent.X, adjacent.Y) &&
+                    maze.GetCell(adjacent.X, adjacent.Y) == CellType.Path)
                 {
-                    int nx = pos.X + dx[i];
-                    int ny = pos.Y + dy[i];
-
-                    if (nx >= 0 && ny >= 0 && nx < size && ny < size &&
-                        !visited[ny, nx] && maze.Grid[ny, nx] != '#')
-                    {
-                        queue.Enqueue(new Position(nx, ny));
-                        visited[ny, nx] = true;
-                        parent[ny, nx] = pos;
-                    }
+                    return true;
                 }
             }
-
-            // Útvonal visszafejtése
-            List<Position> path = new List<Position>();
-            Position p = end;
-            while (!(p.X == start.X && p.Y == start.Y))
-            {
-                path.Add(p);
-                p = parent[p.Y, p.X];
-            }
-            path.Add(start);
-            path.Reverse();
-
-            return path;
+            return false;
         }
     }
 }

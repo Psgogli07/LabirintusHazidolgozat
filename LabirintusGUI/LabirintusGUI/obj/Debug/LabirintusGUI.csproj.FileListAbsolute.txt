@@ -25,3 +25,16 @@ C:\Users\CSAO\Desktop\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.csproj
 C:\Users\CSAO\Desktop\LabirintusGUI\LabirintusGUI\obj\Debug\Labirint.F748505F.Up2Date
 C:\Users\CSAO\Desktop\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.exe
 C:\Users\CSAO\Desktop\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.pdb
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\bin\Debug\LabirintusGUI.exe.config
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\bin\Debug\LabirintusGUI.exe
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\bin\Debug\LabirintusGUI.pdb
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\bin\Debug\ConsoleApp2.exe
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\bin\Debug\ConsoleApp2.pdb
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\bin\Debug\ConsoleApp2.exe.config
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.csproj.AssemblyReference.cache
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.Properties.Resources.resources
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.csproj.GenerateResource.cache
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.csproj.CoreCompileInputs.cache
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\obj\Debug\Labirint.F748505F.Up2Date
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.exe
+E:\123\LabirintusHazidolgozat\LabirintusGUI\LabirintusGUI\obj\Debug\LabirintusGUI.pdb

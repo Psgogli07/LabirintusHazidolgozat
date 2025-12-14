@@ -13,3 +13,10 @@ C:\Users\CSAO\Desktop\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.Ass
 C:\Users\CSAO\Desktop\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
 C:\Users\CSAO\Desktop\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.exe
 C:\Users\CSAO\Desktop\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+E:\123\LabirintusHazidolgozat\LabirintusGUI\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+E:\123\LabirintusHazidolgozat\LabirintusGUI\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+E:\123\LabirintusHazidolgozat\LabirintusGUI\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+E:\123\LabirintusHazidolgozat\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.AssemblyReference.cache
+E:\123\LabirintusHazidolgozat\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+E:\123\LabirintusHazidolgozat\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+E:\123\LabirintusHazidolgozat\LabirintusGUI\ConsoleApp2\obj\Debug\ConsoleApp2.pdb

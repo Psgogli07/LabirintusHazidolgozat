@@ -1,45 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\",
+  "WorkspaceRootPath": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|c:\\users\\csao\\desktop\\labirintusgui\\labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\labirintusgui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\PathFinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|solutionrelative:ConsoleApp2\\PathFinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|solutionrelative:ConsoleApp2\\Maze.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\PathFinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|solutionrelative:ConsoleApp2\\PathFinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|e:\\123\\labirintushazidolgozat\\labirintusgui\\labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\labirintusgui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\mazesizeform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47E00013-E27D-475B-B29E-01B696C31A20}|LabirintusGUI\\LabirintusGUI.csproj|solutionrelative:labirintusgui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|solutionrelative:ConsoleApp2\\Obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|solutionrelative:ConsoleApp2\\Cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D29D255E-D123-4439-A1A0-6FD28FBE2402}|ConsoleApp2\\ConsoleApp2.csproj|solutionrelative:ConsoleApp2\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -50,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\Form1.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\Form1.cs",
               "RelativeDocumentMoniker": "LabirintusGUI\\Form1.cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\Form1.cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\Form1.cs",
               "RelativeToolTip": "LabirintusGUI\\Form1.cs",
-              "ViewState": "AgIAALkAAAAAAAAAAAAgwMUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAowM4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-14T19:01:12.687Z",
               "IsPinned": true,
@@ -68,11 +68,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MazeSizeForm .cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\MazeSizeForm .cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\MazeSizeForm .cs",
               "RelativeDocumentMoniker": "LabirintusGUI\\MazeSizeForm .cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\MazeSizeForm .cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\MazeSizeForm .cs",
               "RelativeToolTip": "LabirintusGUI\\MazeSizeForm .cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAowB4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -80,46 +80,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "MazeSizeForm .cs [Design]",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\MazeSizeForm .cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\MazeSizeForm .cs",
               "RelativeDocumentMoniker": "LabirintusGUI\\MazeSizeForm .cs",
               "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\MazeSizeForm .cs [Design]",
-              "RelativeToolTip": "LabirintusGUI\\MazeSizeForm .cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-14T19:22:43.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "PathFinder.cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\PathFinder.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\PathFinder.cs",
               "RelativeDocumentMoniker": "ConsoleApp2\\PathFinder.cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\PathFinder.cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\PathFinder.cs",
               "RelativeToolTip": "ConsoleApp2\\PathFinder.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAQwFQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T19:09:00.552Z"
+              "WhenOpened": "2025-12-14T19:09:00.552Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Maze.cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Maze.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Maze.cs",
               "RelativeDocumentMoniker": "ConsoleApp2\\Maze.cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Maze.cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Maze.cs",
               "RelativeToolTip": "ConsoleApp2\\Maze.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAgwIkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAA5wC4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T19:08:33.953Z"
+              "WhenOpened": "2025-12-14T19:08:33.953Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Obstacle.cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Obstacle.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Obstacle.cs",
               "RelativeDocumentMoniker": "ConsoleApp2\\Obstacle.cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Obstacle.cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Obstacle.cs",
               "RelativeToolTip": "ConsoleApp2\\Obstacle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -129,9 +130,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Cell.cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Cell.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Cell.cs",
               "RelativeDocumentMoniker": "ConsoleApp2\\Cell.cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Cell.cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Cell.cs",
               "RelativeToolTip": "ConsoleApp2\\Cell.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -141,9 +142,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Program.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp2\\Program.cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\ConsoleApp2\\Program.cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\ConsoleApp2\\Program.cs",
               "RelativeToolTip": "ConsoleApp2\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -151,11 +152,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\Program.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\Program.cs",
               "RelativeDocumentMoniker": "LabirintusGUI\\Program.cs",
-              "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\Program.cs",
+              "ToolTip": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\Program.cs",
               "RelativeToolTip": "LabirintusGUI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -163,12 +164,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\Form1.cs",
+              "DocumentMoniker": "E:\\123\\LabirintusHazidolgozat\\LabirintusGUI\\LabirintusGUI\\Form1.cs",
               "RelativeDocumentMoniker": "LabirintusGUI\\Form1.cs",
               "ToolTip": "C:\\Users\\CSAO\\Desktop\\LabirintusGUI\\LabirintusGUI\\Form1.cs [Design]",
-              "RelativeToolTip": "LabirintusGUI\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-14T19:00:22.25Z"
             }
